@@ -1,0 +1,18 @@
+{
+  "name": "time-field",
+  "description": "A simple time field Web Component based on Polymer 3",
+  "main": "time-field.js",
+  "dependencies": {
+    "@polymer/iron-icons": "^3.0.0-pre.21",
+    "@polymer/polymer": "^3.0.0",
+    "@vaadin/vaadin-button": "^2.1.0-alpha3",
+    "@vaadin/vaadin-text-field": "^2.1.0-alpha3"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.0",
+    "web-component-tester": "^6.7.1",
+    "wct-istanbul": "^0.14.3"
+  }
+}

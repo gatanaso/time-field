@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>time-field test</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+
+    <script type="module" src="../time-field-input.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="time-field-input-fixture">
+      <template>
+        <time-field-input></time-field-input>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+      describe('Time Field Input Tests', () => {
+        let timeFieldInput;
+
+        beforeEach(() => {
+          timeFieldInput = fixture('time-field-input-fixture');
+        });
+
+        describe('_checkValue', () => {
+          it('should simply return when value is empty', () => {
+            // given
+            timeFieldInput.value = '';
+
+            // when
+            timeFieldInput._checkValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.empty;
+          });
+
+          it('should set value to min when not a number', () => {
+            // given
+            timeFieldInput.value = 'not a number';
+
+            // when
+            timeFieldInput._checkValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('00');
+          });
+
+          it('should set value to min when less than min', () => {
+            // given
+            timeFieldInput.min = 5;
+            timeFieldInput.value = '01';
+
+            // when
+            timeFieldInput._checkValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('05');
+          });
+
+          it('should set value to max when greater than max', () => {
+            // given
+            timeFieldInput.max = 5;
+            timeFieldInput.value = '09';
+
+            // when
+            timeFieldInput._checkValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('05');
+          });
+        });
+
+        describe('_decreaseValue', () => {
+          it('should set value to max when not a number', () => {
+            // given
+            timeFieldInput.max = 5;
+            timeFieldInput.value = 'not a number';
+
+            // when
+            timeFieldInput._decreaseValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('05');
+          });
+
+          it('should set value to max when value is less than min', () => {
+            // given
+            timeFieldInput.max = 5;
+            timeFieldInput.min = 3;
+            timeFieldInput.value = '01';
+
+            // when
+            timeFieldInput._decreaseValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('05');
+          });
+
+          it('should decrease value by 1', () => {
+            // given
+            timeFieldInput.max = 5;
+            timeFieldInput.value = '03';
+
+            // when
+            timeFieldInput._decreaseValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('02');
+          });
+        });
+
+        describe('_increaseValue', () => {
+          it('should set value to min when not a number', () => {
+            // given
+            timeFieldInput.min = 1;
+            timeFieldInput.value = 'not a number';
+
+            // when
+            timeFieldInput._increaseValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('01');
+          });
+
+          it('should set value to min when value is greater than max', () => {
+            // given
+            timeFieldInput.max = 5;
+            timeFieldInput.min = 1;
+            timeFieldInput.value = '07';
+
+            // when
+            timeFieldInput._increaseValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('01');
+          });
+
+          it('should increase value by 1', () => {
+            // given
+            timeFieldInput.max = 5;
+            timeFieldInput.value = '03';
+
+            // when
+            timeFieldInput._increaseValue();
+
+            // then
+            expect(timeFieldInput.value).to.be.eq('04');
+          });
+        });
+
+        describe('_zeroPadValue', () => {
+          it('should zero pad number if it\'s less than 10', () => {
+            // given
+            const intValue = 7;
+
+            // when
+            const value = timeFieldInput._zeroPadValue(intValue);
+
+            // then
+            expect(value).to.be.eq('07')
+          });
+
+          it('should not zero pad number it\'s greater than 10', () => {
+            // given
+            const intValue = 25;
+
+            // when
+            const value = timeFieldInput._zeroPadValue(intValue);
+
+            // then
+            expect(value).to.be.eq('25')
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>
