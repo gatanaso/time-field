@@ -1,3 +1,5 @@
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/time-field)
+
 # \<time-field\>
 
 A simple time field Web Component based on Polymer 3.
