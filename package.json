@@ -1,7 +1,25 @@
 {
   "name": "time-field",
   "description": "A simple time field Web Component based on Polymer 3",
+  "version": "0.0.1",
   "main": "time-field.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatanaso/time-field.git"
+  },
+  "keywords": [
+    "time-field",
+    "web-components",
+    "web-component",
+    "polymer-3",
+    "polymer"
+  ],
+  "author": "Goran",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/gatanaso/time-field/issues"
+  },
+  "homepage": "https://github.com/gatanaso/time-field",
   "dependencies": {
     "@polymer/iron-icons": "^3.0.0-pre.21",
     "@polymer/polymer": "^3.0.0",
