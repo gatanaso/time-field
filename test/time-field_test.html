@@ -1,0 +1,122 @@
+  <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>time-field test</title>
+
+    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+
+    <script type="module" src="../time-field.js"></script>
+  </head>
+  <body>
+
+    <test-fixture id="time-field-fixture">
+      <template>
+        <time-field></time-field>
+      </template>
+    </test-fixture>
+
+    <script type="module">
+      describe('Time Field Tests', () => {
+        let timeField;
+
+        beforeEach(() => {
+          timeField = fixture('time-field-fixture');
+        });
+
+        describe('_valueObserver', () => {
+          it('should return when value is empty', () => {
+            // given
+            const value = '';
+
+            // when
+            timeField._valueObserver(value);
+
+            // then
+            expect(timeField._hours).to.be.empty;
+            expect(timeField._minutes).to.be.empty;
+          });
+
+          it('should return and keep old value when new value is empty', () => {
+            // given
+            timeField.value = '01:49'
+            const newValue = '';
+
+            // when
+            timeField._valueObserver(newValue);
+
+            // then
+            expect(timeField._hours).to.be.eq('01');
+            expect(timeField._minutes).to.be.eq('49');
+          });
+
+          it('should set hours and minutes', () => {
+            // given
+            const value = '16:47';
+
+            // when
+            timeField._valueObserver(value);
+
+            // then
+            expect(timeField._hours).to.be.eq('16');
+            expect(timeField._minutes).to.be.eq('47');
+          });
+        });
+
+        describe('_valueTimeObserver', () => {
+          it('should set value to empty when hours is missing', () => {
+            // given
+            const hours = '';
+            const minutes = '23';
+
+            // when
+            timeField._valueTimeObserver(hours, minutes);
+
+            // then
+            expect(timeField.value).to.be.empty;
+          });
+
+          it('should set value to empty when minutes is missing', () => {
+            // given
+            const hours = '04';
+            const minutes = '';
+
+            // when
+            timeField._valueTimeObserver(hours, minutes);
+
+            // then
+            expect(timeField.value).to.be.empty;
+          });
+
+          it('should set value to empty when both hours and minutes is missing', () => {
+            // given
+            const hours = '';
+            const minutes = '';
+
+            // when
+            timeField._valueTimeObserver(hours, minutes);
+
+            // then
+            expect(timeField.value).to.be.empty;
+          });
+
+          it('should set value to "HH:mm"', () => {
+            // given
+            const hours = '11';
+            const minutes = '23';
+
+            // when
+            timeField._valueTimeObserver(hours, minutes);
+
+            // then
+            expect(timeField.value).to.be.eq('11:23');
+          });
+        });
+        });
+    </script>
+
+  </body>
+</html>
