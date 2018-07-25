@@ -1,0 +1,11 @@
+sudo: true
+dist: trusty
+
+language: node_js
+node_js: 8.11
+
+addons:
+  chrome: stable
+
+script:
+  - npm test
