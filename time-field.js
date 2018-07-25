@@ -29,12 +29,16 @@ class TimeField extends PolymerElement {
           font-weight: bold;
           width: 1em;
         }
+
+        [part="input"] {
+          width: calc(50% - calc(var(--separator-width) / 2));
+        }
       </style>
 
       <div part="value">
-        <time-field-input min="0" max="23" value="{{_hours}}"></time-field-input>
+        <time-field-input part="input" min="0" max="23" value="{{_hours}}"></time-field-input>
         <div part="separator">:</div>
-        <time-field-input min="0" max="59" value="{{_minutes}}"></time-field-input>
+        <time-field-input part="input" min="0" max="59" value="{{_minutes}}"></time-field-input>
       </div>
     `;
   }

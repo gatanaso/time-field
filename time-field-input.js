@@ -17,9 +17,15 @@ class TimeNumberInput extends PolymerElement {
       <style include="time-field-styles">
         :host {
           display: flex;
+          min-width: 0;
         }
 
-        vaadin-button {
+        [part="time-input"] {
+          min-width: 0;
+        }
+
+        [part="decrease"],
+        [part="increase"] {
           margin: 0;
           padding: 0;
           color: var(--lumo-body-text-color);
