@@ -3,6 +3,9 @@
   "description": "A simple time field Web Component based on Polymer 3",
   "version": "0.0.1",
   "main": "time-field.js",
+  "scripts": {
+    "test": "wct test --npm -module-resolution=node"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatanaso/time-field.git"
