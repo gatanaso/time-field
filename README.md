@@ -5,6 +5,8 @@
 
 A simple time field Web Component based on Polymer 3.
 
+[Live Demo ↗](https://time-field.firebaseapp.com/demo/)
+
 ### Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed.
