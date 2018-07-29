@@ -1,5 +1,6 @@
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/time-field)
 [![Build Status](https://travis-ci.org/gatanaso/time-field.svg?branch=master)](https://travis-ci.org/gatanaso/time-field)
+[![codecov](https://codecov.io/gh/gatanaso/time-field/branch/master/graph/badge.svg)](https://codecov.io/gh/gatanaso/time-field)
 
 # \<time-field\>
 
