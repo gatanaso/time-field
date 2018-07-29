@@ -13,7 +13,14 @@ module.exports = {
       }
     },
     local: {
-      browsers: ["chrome"]
+      browsers: ["chrome"],
+      browserOptions: {
+        chrome: [
+          "headless",
+          "disable-gpu",
+          "no-sandbox"
+        ],
+      }
     }
   }
 };
