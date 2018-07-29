@@ -1,4 +1,4 @@
-sudo: true
+sudo: false
 dist: trusty
 
 language: node_js
@@ -7,5 +7,11 @@ node_js: 8.11
 addons:
   chrome: stable
 
+install:
+  - npm install -g codecov
+
 script:
   - npm test
+
+after_success:
+  - codecov --file coverage/lcov.info --disable search
