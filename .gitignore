@@ -1,3 +1,6 @@
 node_modules
 coverage
+build
 package-lock.json
+.firebaserc
+firebase.json
