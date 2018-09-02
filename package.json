@@ -1,7 +1,7 @@
 {
   "name": "time-field",
   "description": "A simple time field Web Component based on Polymer 3",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "time-field.js",
   "scripts": {
     "test": "wct test --npm -module-resolution=node"
