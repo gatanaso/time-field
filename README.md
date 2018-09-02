@@ -8,18 +8,27 @@ A simple time field Web Component based on Polymer 3.
 
 [Live Demo ↗](https://time-field.firebaseapp.com/demo/)
 
-### Install the Polymer-CLI
-
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed.
-Run `npm install` to install the element's dependencies, then run `polymer serve` to serve the element locally.
-
-### Viewing The `<time-field>`
-
+### Getting started
+The `time-field` component is distributed as an npm package.
+To start using it, first install it from the command line:
 ```
-$ polymer serve
+npm install --save gatanaso/time-field
+```
+Once installed, import it into your application:
+```
+import 'time-field/time-field.js'
 ```
 
-### Running Tests
+### Running demos locally
+
+1. Fork the `time-field` repository and clone it locally.
+1. Make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed.
+1. When in the `time-field` directory, run `npm install` to install the element's dependencies.
+1. Run `polymer serve --open`, the browser will automatically open the components demo page.
+
+### Running tests from the command line
+
+When in the `time-field` directory, run:
 
 ```
 $ wct test --npm -module-resolution=node
