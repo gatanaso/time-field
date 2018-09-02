@@ -18,6 +18,10 @@ class TimeField extends PolymerElement {
           display: block;
         }
 
+        :host([disabled]) {
+          color: var(--lumo-disabled-text-color)
+        }
+
         [part="value"] {
           display: flex;
           align-items: center;
@@ -36,9 +40,23 @@ class TimeField extends PolymerElement {
       </style>
 
       <div part="value">
-        <time-field-input part="input" min="0" max="23" value="{{_hours}}"></time-field-input>
+        <time-field-input
+          part="input"
+          disabled="[[disabled]]"
+          min="0"
+          max="23"
+          value="{{_hours}}">
+        </time-field-input>
+
         <div part="separator">:</div>
-        <time-field-input part="input" min="0" max="59" value="{{_minutes}}"></time-field-input>
+
+        <time-field-input
+          part="input"
+          disabled="[[disabled]]"
+          min="0"
+          max="59"
+          value="{{_minutes}}">
+        </time-field-input>
       </div>
     `;
   }
@@ -51,6 +69,11 @@ class TimeField extends PolymerElement {
       value: {
         type: String,
         observer: '_valueObserver'
+      },
+
+      disabled: {
+        type: Boolean,
+        reflectToAttribute: true
       }
     };
   }

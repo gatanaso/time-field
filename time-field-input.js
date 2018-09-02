@@ -28,6 +28,11 @@ class TimeNumberInput extends PolymerElement {
         [part="increase"] {
           margin: 0;
           padding: 0;
+          min-width: 0;
+        }
+
+        [part="decrease"]:not([disabled]),
+        [part="increase"]:not([disabled]) {
           color: var(--lumo-body-text-color);
         }
       </style>
@@ -37,13 +42,26 @@ class TimeNumberInput extends PolymerElement {
         value="{{value}}"
         pattern="[0-9]{0,2}"
         on-blur="_checkValue"
+        disabled="[[disabled]]"
         prevent-invalid-input>
 
-        <vaadin-button part="decrease" theme="icon tertiary" slot="prefix" on-click="_decreaseValue">
+        <vaadin-button
+          part="decrease"
+          theme="icon tertiary"
+          slot="prefix"
+          disabled="[[disabled]]"
+          on-click="_decreaseValue">
+
           <iron-icon icon="icons:remove"></iron-icon>
         </vaadin-button>
 
-        <vaadin-button part="increase" theme="icon tertiary" slot="suffix" on-click="_increaseValue">
+        <vaadin-button
+          part="increase"
+          theme="icon tertiary"
+          slot="suffix"
+          disabled="[[disabled]]"
+          on-click="_increaseValue">
+
           <iron-icon icon="icons:add"></iron-icon>
         </vaadin-button>
 
@@ -66,6 +84,11 @@ class TimeNumberInput extends PolymerElement {
         type: Number,
         value: 0
       },
+
+      disabled: {
+        type: Boolean,
+        reflectToAttribute: true
+      }
     };
   }
 
