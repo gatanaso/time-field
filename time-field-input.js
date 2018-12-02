@@ -33,7 +33,7 @@ class TimeNumberInput extends PolymerElement {
 
         [part="decrease"]:not([disabled]),
         [part="increase"]:not([disabled]) {
-          color: var(--lumo-body-text-color);
+          color: var(--time-field-controls-color, var(--time-field-controls-default-color));
         }
       </style>
 

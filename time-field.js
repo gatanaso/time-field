@@ -14,12 +14,21 @@ class TimeField extends PolymerElement {
   static get template() {
     return html`
       <style>
+        * {
+        --time-field-default-color: hsla(214, 40%, 16%, 0.94);;
+        --time-field-input-default-color: var(--time-field-default-color);
+        --time-field-controls-default-color: var(--time-field-default-color);
+        --time-field-separator-default-color: var(--time-field-default-color);
+
+          --time-field-disabled-default-color: hsla(214, 50%, 22%, 0.26);
+        }
+
         :host {
           display: block;
         }
 
-        :host([disabled]) {
-          color: var(--lumo-disabled-text-color)
+        :host([disabled]) [part="separator"] {
+          color: var(--time-field-disabled-color, var(--time-field-disabled-default-color));
         }
 
         [part="value"] {
@@ -32,6 +41,7 @@ class TimeField extends PolymerElement {
           text-align: center;
           font-weight: bold;
           width: 1em;
+          color: var(--time-field-separator-color, var(--time-field-separator-default-color));
         }
 
         [part="input"] {

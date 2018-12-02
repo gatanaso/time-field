@@ -10,6 +10,7 @@ styleMod.innerHTML = `
     <style>
       :host [part="value"] {
         text-align: center;
+        color: var(--time-field-input-color, var(--time-field-input-default-color));
       }
     </style>
   </template>
