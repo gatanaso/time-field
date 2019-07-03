@@ -1,11 +1,8 @@
 {
   "name": "time-field",
-  "description": "A simple time field Web Component based on Polymer 3",
-  "version": "0.0.5",
+  "description": "A time field Web Component based on Polymer 3",
+  "version": "1.0.0",
   "main": "time-field.js",
-  "scripts": {
-    "test": "wct test --npm -module-resolution=node"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatanaso/time-field.git"
@@ -19,21 +16,39 @@
   ],
   "author": "Goran",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/gatanaso/time-field",
   "bugs": {
     "url": "https://github.com/gatanaso/time-field/issues"
   },
-  "homepage": "https://github.com/gatanaso/time-field",
+  "files": [
+    "time-field-*.js"
+  ],
+  "scripts": {
+    "test": "npm run lint && wct --npm",
+    "lint": "npm-run-all --parallel lint:*",
+    "lint:css": "stylelint --syntax html *.js demo test",
+    "lint:html": "eslint *.html demo test --ext .html",
+    "lint:js": "eslint *.js",
+    "lint:polymer": "polymer lint --input *.js",
+    "start": "npm run lint && wct --npm && polymer serve --npm --open"
+  },
   "dependencies": {
-    "@polymer/iron-icons": "^3.0.0-pre.21",
     "@polymer/polymer": "^3.0.0",
-    "@vaadin/vaadin-button": "^2.1.0-alpha3",
-    "@vaadin/vaadin-text-field": "^2.1.0-alpha3"
+    "@vaadin/vaadin-button": "^2.2.0",
+    "@vaadin/vaadin-text-field": "^2.4.7",
+    "@polymer/iron-icons": "^3.0.1"
   },
   "devDependencies": {
-    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@polymer/iron-demo-helpers": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
-    "wct-browser-legacy": "^1.0.0",
-    "web-component-tester": "^6.7.1",
-    "wct-istanbul": "^0.14.3"
+    "eslint": "^6.0.1",
+    "eslint-config-vaadin": "^0.2.7",
+    "eslint-plugin-html": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^10.1.0",
+    "stylelint-config-vaadin": "^0.1.4",
+    "wct-browser-legacy": "^1.0.2",
+    "wct-istanbul": "^0.14.3",
+    "web-component-tester": "^6.9.2"
   }
 }

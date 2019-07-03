@@ -4,15 +4,15 @@
 
 # \<time-field\>
 
-A simple time field Web Component based on Polymer 3.
+A time field Web Component based on Polymer 3.
 
-[Live Demo ↗](https://time-field.web.app/demo/)
+[Live Demo ↗](https://time-field.firebaseapp.com/demo/)
 
 ### Getting started
 The `time-field` component is distributed as an npm package.
 To start using it, first install it from the command line:
 ```
-npm install --save gatanaso/time-field
+npm install --save time-field
 ```
 Once installed, import it into your application:
 ```
@@ -31,5 +31,5 @@ import 'time-field/time-field.js'
 When in the `time-field` directory, run:
 
 ```
-$ wct test --npm -module-resolution=node
+$ wct --npm
 ```

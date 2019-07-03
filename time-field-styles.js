@@ -16,4 +16,4 @@ styleMod.innerHTML = `
   </template>
 `;
 
-styleMod.register("time-field-styles");
+styleMod.register('time-field-styles');

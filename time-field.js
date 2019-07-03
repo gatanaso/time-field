@@ -4,7 +4,7 @@ import './time-field-input.js';
 
 /**
  * `time-field`
- * A simple time field input element
+ * A time field input element
  *
  * @customElement
  * @polymer
@@ -15,11 +15,10 @@ class TimeField extends PolymerElement {
     return html`
       <style>
         * {
-        --time-field-default-color: hsla(214, 40%, 16%, 0.94);;
-        --time-field-input-default-color: var(--time-field-default-color);
-        --time-field-controls-default-color: var(--time-field-default-color);
-        --time-field-separator-default-color: var(--time-field-default-color);
-
+          --time-field-default-color: hsla(214, 40%, 16%, 0.94);
+          --time-field-input-default-color: var(--time-field-default-color);
+          --time-field-controls-default-color: var(--time-field-default-color);
+          --time-field-separator-default-color: var(--time-field-default-color);
           --time-field-disabled-default-color: hsla(214, 50%, 22%, 0.26);
         }
 

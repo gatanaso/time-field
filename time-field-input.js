@@ -9,7 +9,7 @@ import './time-field-styles.js';
 /**
  * `time-field-input`
  *
- * A very simple number input based on the `vaadin-text-field`.
+ * A number input based on the `vaadin-text-field`.
  */
 class TimeNumberInput extends PolymerElement {
   static get template() {
@@ -93,7 +93,7 @@ class TimeNumberInput extends PolymerElement {
   }
 
   _checkValue() {
-    if(!this.value) {
+    if (!this.value) {
       return;
     }
 
@@ -105,7 +105,7 @@ class TimeNumberInput extends PolymerElement {
 
     if (intValue < this.min) {
       intValue = this.min;
-    } else if(intValue > this.max) {
+    } else if (intValue > this.max) {
       intValue = this.max;
     }
 

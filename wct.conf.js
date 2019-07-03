@@ -2,9 +2,9 @@ module.exports = {
   verbose: false,
   plugins: {
     istanbul: {
-      dir: "./coverage",
-      reporters: ["text-summary", "lcov"],
-      include: ["**/time-field*.js"],
+      dir: './coverage',
+      reporters: ['text-summary', 'lcov'],
+      include: ['**/time-field*.js'],
       exclude: [],
       thresholds: {
         global: {
@@ -13,12 +13,12 @@ module.exports = {
       }
     },
     local: {
-      browsers: ["chrome"],
+      browsers: ['chrome'],
       browserOptions: {
         chrome: [
-          "headless",
-          "disable-gpu",
-          "no-sandbox"
+          'headless',
+          'disable-gpu',
+          'no-sandbox'
         ],
       }
     }
