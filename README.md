@@ -1,10 +1,11 @@
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/time-field)
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/gatanasotime-field)
 [![Build Status](https://travis-ci.org/gatanaso/time-field.svg?branch=master)](https://travis-ci.org/gatanaso/time-field)
 [![codecov](https://codecov.io/gh/gatanaso/time-field/branch/master/graph/badge.svg)](https://codecov.io/gh/gatanaso/time-field)
 
 # \<time-field\>
 
-A time field Web Component based on Polymer 3.
+A time field web component based on polymer 3.
 
 [Live Demo ↗](https://time-field.firebaseapp.com/demo/)
 
@@ -24,7 +25,7 @@ import 'time-field/time-field.js'
 1. Fork the `time-field` repository and clone it locally.
 1. Make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) and npm (packaged with [Node.js](https://nodejs.org)) installed.
 1. When in the `time-field` directory, run `npm install` to install the element's dependencies.
-1. Run `polymer serve --open`, the browser will automatically open the components demo page.
+1. Run `polymer serve --npm --open`, the browser will automatically open the components demo page.
 
 ### Running tests from the command line
 
