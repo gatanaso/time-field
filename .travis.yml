@@ -7,6 +7,9 @@ node_js: 8.11
 addons:
   chrome: stable
 
+before_script:
+  - npm install -g polymer-cli
+
 script:
   - npm test
 
